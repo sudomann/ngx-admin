@@ -12,7 +12,7 @@ const routes: Routes = [
     component: PagesComponent,
     children: [
       {
-        path: "",
+        path: "overview",
         component: ECommerceComponent
       },
       {
@@ -76,6 +76,7 @@ const routes: Routes = [
             m => m.MiscellaneousModule
           )
       },
+      { path: "", redirectTo: "overview", pathMatch: "full" },
       {
         path: "**",
         component: NotFoundComponent
