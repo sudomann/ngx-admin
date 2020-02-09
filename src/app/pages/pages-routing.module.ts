@@ -1,92 +1,92 @@
-import { RouterModule, Routes } from "@angular/router";
-import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
 
-import { PagesComponent } from "./pages.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { ECommerceComponent } from "./e-commerce/e-commerce.component";
-import { NotFoundComponent } from "./miscellaneous/not-found/not-found.component";
+import { PagesComponent } from './pages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ECommerceComponent } from './e-commerce/e-commerce.component';
+import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: PagesComponent,
     children: [
       {
-        path: "overview",
-        component: ECommerceComponent
+        path: 'overview',
+        component: ECommerceComponent,
       },
       {
-        path: "transactions",
-        component: DashboardComponent
+        path: 'transactions',
+        component: DashboardComponent,
       },
       {
-        path: "layout",
+        path: 'layout',
         loadChildren: () =>
-          import("./layout/layout.module").then(m => m.LayoutModule)
+          import('./layout/layout.module').then(m => m.LayoutModule),
       },
       {
-        path: "forms",
+        path: 'forms',
         loadChildren: () =>
-          import("./forms/forms.module").then(m => m.FormsModule)
+          import('./forms/forms.module').then(m => m.FormsModule),
       },
       {
-        path: "ui-features",
+        path: 'ui-features',
         loadChildren: () =>
-          import("./ui-features/ui-features.module").then(
-            m => m.UiFeaturesModule
-          )
+          import('./ui-features/ui-features.module').then(
+            m => m.UiFeaturesModule,
+          ),
       },
       {
-        path: "modal-overlays",
+        path: 'modal-overlays',
         loadChildren: () =>
-          import("./modal-overlays/modal-overlays.module").then(
-            m => m.ModalOverlaysModule
-          )
+          import('./modal-overlays/modal-overlays.module').then(
+            m => m.ModalOverlaysModule,
+          ),
       },
       {
-        path: "extra-components",
+        path: 'extra-components',
         loadChildren: () =>
-          import("./extra-components/extra-components.module").then(
-            m => m.ExtraComponentsModule
-          )
+          import('./extra-components/extra-components.module').then(
+            m => m.ExtraComponentsModule,
+          ),
       },
       {
-        path: "maps",
-        loadChildren: () => import("./maps/maps.module").then(m => m.MapsModule)
+        path: 'maps',
+        loadChildren: () => import('./maps/maps.module').then(m => m.MapsModule),
       },
       {
-        path: "charts",
+        path: 'charts',
         loadChildren: () =>
-          import("./charts/charts.module").then(m => m.ChartsModule)
+          import('./charts/charts.module').then(m => m.ChartsModule),
       },
       {
-        path: "editors",
+        path: 'editors',
         loadChildren: () =>
-          import("./editors/editors.module").then(m => m.EditorsModule)
+          import('./editors/editors.module').then(m => m.EditorsModule),
       },
       {
-        path: "tables",
+        path: 'tables',
         loadChildren: () =>
-          import("./tables/tables.module").then(m => m.TablesModule)
+          import('./tables/tables.module').then(m => m.TablesModule),
       },
       {
-        path: "miscellaneous",
+        path: 'miscellaneous',
         loadChildren: () =>
-          import("./miscellaneous/miscellaneous.module").then(
-            m => m.MiscellaneousModule
-          )
+          import('./miscellaneous/miscellaneous.module').then(
+            m => m.MiscellaneousModule,
+          ),
       },
-      { path: "", redirectTo: "overview", pathMatch: "full" },
+      { path: '', redirectTo: 'overview', pathMatch: 'full' },
       {
-        path: "**",
-        component: NotFoundComponent
-      }
-    ]
-  }
+        path: '**',
+        component: NotFoundComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class PagesRoutingModule {}

@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "ngx-tab1",
+  selector: 'ngx-tab1',
   template: `
     <p>
       Early home automation began with labor-saving machines. Self-contained
@@ -18,32 +18,32 @@ import { Component } from "@angular/core";
       and led to the introduction of washing machines (1904), water heaters
       (1889), refrigerators, sewing machines, dishwashers, and clothes dryers.
     </p>
-  `
+  `,
 })
 export class Tab1Component {}
 
 @Component({
-  selector: "ngx-tab2",
+  selector: 'ngx-tab2',
   template: `
     <p>Tab 2 works!</p>
-  `
+  `,
 })
 export class Tab2Component {}
 
 @Component({
-  selector: "ngx-tabs",
-  styleUrls: ["./tabs.component.scss"],
-  templateUrl: "./tabs.component.html"
+  selector: 'ngx-tabs',
+  styleUrls: ['./tabs.component.scss'],
+  templateUrl: './tabs.component.html',
 })
 export class TabsComponent {
   tabs: any[] = [
     {
-      title: "Route tab #1",
-      route: "/layout/tabs/tab1"
+      title: 'Route tab #1',
+      route: '/layout/tabs/tab1',
     },
     {
-      title: "Route tab #2",
-      route: "/layout/tabs/tab2"
-    }
+      title: 'Route tab #2',
+      route: '/layout/tabs/tab2',
+    },
   ];
 }
