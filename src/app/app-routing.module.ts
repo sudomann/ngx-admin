@@ -11,13 +11,9 @@ import {
 
 const routes: Routes = [
   {
-    path: "auth",
+    path: "",
     component: NbAuthComponent,
     children: [
-      {
-        path: "",
-        component: NbLoginComponent
-      },
       {
         path: "login",
         component: NbLoginComponent
@@ -40,11 +36,11 @@ const routes: Routes = [
       }
     ]
   },
-    {
-    path: "",
+  {
+    path: "account",
     loadChildren: () =>
       import("app/pages/pages.module").then(m => m.PagesModule)
-  },
+  }
   //{ path: "**", redirectTo: "" }
 ];
 
